@@ -1,0 +1,28 @@
+/* @media screen and (min-width: 768px){
+    .md-show{
+        visibility: visible !important;
+    }
+} */
+
+/* Small Screen (Mobile) */
+@media screen and (max-width: 767px) {
+    .sm-hidden{
+        display: none !important;
+    }
+
+    .sm-show{
+        display: block !important;
+    }
+
+    .sm-text-center{
+        text-align: center !important;
+    }
+
+    .sm-card-title-font{
+        font-size: 0.85rem !important; 
+    }
+
+    .sm-card-text-font{
+        font-size: 0.6rem !important;
+    }
+}
