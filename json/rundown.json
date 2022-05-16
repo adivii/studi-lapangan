@@ -1,0 +1,30 @@
+[
+    {
+        "id":"day-one",
+        "tanggal":"05 Juni 2022",
+        "waktu":"17.00",
+        "kegiatan":"Peserta berkumpul di Gedung Ilmu Komputer",
+        "keterangan":"Pakaian Bebas"
+    },
+    {
+        "id":"day-one",
+        "tanggal":"05 Juni 2022",
+        "waktu":"18.30",
+        "kegiatan":"Berangkat menuju dermaga",
+        "keterangan":"Pakaian Bebas"
+    },
+    {
+        "id":"day-two",
+        "tanggal":"06 Juni 2022",
+        "waktu":"06.00",
+        "kegiatan":"Sarapan",
+        "keterangan":"Pakaian Bebas"
+    },
+    {
+        "id":"day-three",
+        "tanggal":"07 Juni 2022",
+        "waktu":"08.00",
+        "kegiatan":"Kunjungan industri pertama",
+        "keterangan":"Pakaian kemeja dan almamater Unila"
+    }
+]
