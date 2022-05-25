@@ -4,8 +4,6 @@ include './connection.php';
 
 $result = "";
 
-mysqli_select_db($conn, "studi-lapangan");
-
 $key = $_GET["key"];
 
 if($key === "all"){

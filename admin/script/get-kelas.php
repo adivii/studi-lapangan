@@ -4,8 +4,6 @@ include './connection.php';
 
 $result = "<option id=\"placeholder-kelas\" selected>Pilih Kelas</option>";
 
-mysqli_select_db($conn, "studi-lapangan");
-
 $query = "SELECT * FROM kelas ORDER BY nama_kelas;";
 
 $queryResult = mysqli_query($conn, $query);

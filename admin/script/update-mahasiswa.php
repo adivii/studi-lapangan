@@ -1,7 +1,6 @@
 <?php
 
 include './connection.php';
-mysqli_select_db($conn, "studi-lapangan");
 
 $success = true;
 

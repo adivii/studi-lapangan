@@ -4,8 +4,6 @@ include './connection.php';
 
 $result = "<option id=\"default-hari\" value=\"all\" selected>Semua Jadwal</option>";
 
-mysqli_select_db($conn, "studi-lapangan");
-
 $query = "SELECT `event_date` FROM rundown;";
 
 $queryResult = mysqli_query($conn, $query);

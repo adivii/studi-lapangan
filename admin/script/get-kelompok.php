@@ -4,8 +4,6 @@ include './connection.php';
 
 $result = "<option id=\"placeholder-kelompok\" selected>Pilih Kelompok</option>";
 
-mysqli_select_db($conn, "studi-lapangan");
-
 $query = "SELECT * FROM kelompok ORDER BY nama_kelompok;";
 
 $queryResult = mysqli_query($conn, $query);

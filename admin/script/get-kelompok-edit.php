@@ -5,8 +5,6 @@ include './connection.php';
 $result = "";
 $key = $_GET["key"];
 
-mysqli_select_db($conn, "studi-lapangan");
-
 $query = "SELECT * FROM kelompok ORDER BY nama_kelompok;";
 
 $queryResult = mysqli_query($conn, $query);

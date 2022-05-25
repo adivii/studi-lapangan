@@ -5,8 +5,6 @@ include './connection.php';
 $result = "";
 $key = $_GET["key"];
 
-mysqli_select_db($conn, "studi-lapangan");
-
 $query = "SELECT * FROM bus ORDER BY nama_bus;";
 
 $queryResult = mysqli_query($conn, $query);

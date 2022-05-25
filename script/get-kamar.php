@@ -5,11 +5,6 @@ include './connection.php';
 $key = $_GET["key"];
 $result = "";
 
-mysqli_select_db($conn, "studi-lapangan");
-
-// Retrieve id_bus
-// $id_bus = mysqli_fetch_assoc(mysqli_query("SELECT id_bus FROM mahasiswa WHERE (`npm` LIKE '%$key%') OR (`nama` LIKE '%$key%') ORDER BY `npm`;"))
-
 if($key === ""){
     $query = "SELECT `mahasiswa`.`npm_mhs`, `mahasiswa`.`nama_mhs`, `kamar`.`nomor_kamar`
                 FROM `mahasiswa`, `kamar`

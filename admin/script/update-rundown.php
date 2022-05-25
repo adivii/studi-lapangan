@@ -1,7 +1,6 @@
 <?php
 
 include './connection.php';
-mysqli_select_db($conn, "studi-lapangan");
 
 if(isset($_GET["submit"])){
     $id = $_GET['event-id'];

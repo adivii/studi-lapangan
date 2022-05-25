@@ -5,8 +5,6 @@ include './connection.php';
 $id = $_GET["id"];
 $result = "";
 
-mysqli_select_db($conn, "studi-lapangan");
-
 if($id === "all"){
     $query = "SELECT * FROM rundown ORDER BY `event_date`, `event_time`;";
 }else{

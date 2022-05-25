@@ -5,8 +5,6 @@ include './connection.php';
 $result = "";
 $key = $_GET["key"];
 
-mysqli_select_db($conn, "studi-lapangan");
-
 $query = "DELETE FROM `mahasiswa` WHERE `npm_mhs`='$key';;";
 
 $queryResult = mysqli_query($conn, $query);

@@ -9,7 +9,6 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
 $key = $_GET["key"];
 
 include "../script/connection.php";
-mysqli_select_db($conn, "studi-lapangan");
 
 $query = "SELECT * FROM `rundown` WHERE `rundown`.`id`=$key;";
 
