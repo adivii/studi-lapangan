@@ -29,5 +29,19 @@ function load_date(){
     xmlhttp.send();
 }
 
+function edit_data(key){
+    location.href="./edit-rundown.php?key=" + key;
+}
+
+function hapus_data(key){
+    var isDelete = confirm("Delete Data?");
+
+    if(isDelete){
+        location.href="../script/delete-rundown.php?key=" + key;
+    }else{
+        location.href="../page/show-rundown.php";
+    }
+}
+
 load_date();
 change("all");

@@ -6,6 +6,19 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
     header("location: ../index.html");
 }
 
+$key = $_GET["key"];
+
+include "../script/connection.php";
+mysqli_select_db($conn, "studi-lapangan");
+
+$query = "SELECT * FROM `rundown` WHERE `rundown`.`id`=$key;";
+
+$queryResult = mysqli_query($conn, $query);
+
+$result = mysqli_fetch_assoc($queryResult);
+
+?>
+
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +37,7 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
     <title>Studi Lapangan</title>
 </head>
 <body class="bg-dark">
-  <nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container p-0 px-2">
       <a class="navbar-brand text-light" href="#">
         <img src="../../res/Logo_UnivLampung.png" alt="" width="40px" class="d-inline-block align-text-center me-2">
@@ -53,7 +66,7 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
               Lihat
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a href="./show-rundown.php" class="dropdown-item">Rundown</a></li>
+              <li><a href="#" class="dropdown-item">Rundown</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="./show-mahasiswa.php">Data Mahasiswa</a></li>
             </ul>
@@ -66,29 +79,34 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
     </div>
   </nav>
 
-  <div class="container" style="margin-top: 120px;">
-    <div class="container row position-relative sm-show" style="height: 80px; display: none;">
-      <!-- <img class="img h-auto position-absolute top-50 start-50 translate-middle" src="res/Logo_UnivLampung.png" alt="" style="width: 90px;"> -->
-      <div class="container-fluid p-0 position-absolute top-50 start-50 translate-middle" style="width: 150px; height: 80px; border-radius: 35px 10px; overflow: hidden; box-shadow: 2px 2px 5px var(--white-color);">
-        <img class="img w-100" src="res/pexels-olia-danilevich-4974912.jpg" alt="">
+  <div class="container w-75 mx-auto mt-2">
+    <form action="../script/update-rundown.php" method="get">
+      <div class="mb-3">
+        <label for="event-id" class="form-label text-light">ID Kegiatan</label>
+        <input type="number" class="form-control" id="event-id" name="event-id" value="<?php echo $result["id"] ?>" readonly>
       </div>
-    </div>
-    <div class="container row">
-      <div class="col-sm-4 col position-relative">
-        <div class="container card-image-container-home p-0 position-absolute top-50 start-50 translate-middle sm-hidden" style="border-radius: 60px 20px; overflow: hidden;">
-          <img class="img w-100" src="../../res/pexels-olia-danilevich-4974912.jpg" alt="">
-        </div>
+      <div class="mb-3">
+        <label for="event-date" class="form-label text-light">Tanggal Kegiatan</label>
+        <input type="date" class="form-control" id="event-date" name="event-date" value="<?php echo $result["event_date"] ?>">
       </div>
-      <div class="col-md-8 col-12 card-container-home">
-        <div class="card border-0 sm-text-center text-start text-light bg-transparent">
-          <div class="card-body">
-            <h1 class="card-title h1 card-title-font" style="font-size: 1.8rem;">ADMIN STUDI LAPANGAN</h1>
-            <p class="card-text card-text-font" style="font-size: 1rem;">Halaman ini digunakan sebagai akses panitia dalam mengelola informasi seputar Studi Lapangan.</p>
-            <a href="#" class="btn btn-primary btn-font">Learn More</a>
-          </div>
-        </div>
+      <div class="mb-3">
+        <label for="event-time" class="form-label text-light">Waktu Kegiatan</label>
+        <input type="time" class="form-control" id="event-time" name="event-time" value="<?php echo $result["event_time"] ?>">
       </div>
-    </div>
+      <div class="mb-3">
+        <label for="event-title" class="form-label text-light">Kegiatan</label>
+        <input type="text" class="form-control" id="event-title" name="event-title" value="<?php echo $result["event_title"] ?>">
+      </div>
+      <div class="mb-3">
+        <label for="event-place" class="form-label text-light">Lokasi</label>
+        <input type="text" class="form-control" id="event-place" name="event-place" value="<?php echo $result["event_place"] ?>">
+      </div>
+      <div class="mb-3">
+        <label for="event-detail" class="form-label text-light">Keterangan</label>
+        <input type="text" class="form-control" id="event-detail" name="event-detail" value="<?php echo $result["event_detail"] ?>">
+      </div>
+      <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
+    </form>
   </div>
 </body>
 </html>

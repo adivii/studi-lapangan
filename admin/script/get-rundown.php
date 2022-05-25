@@ -24,6 +24,10 @@ if (mysqli_num_rows($queryResult) > 0){
                 <td class=\"rundown-text-font\">".$row["event_title"]."</td>
                 <td class=\"rundown-text-font\">".$row["event_place"]."</td>
                 <td class=\"rundown-text-font\">".$row["event_detail"]."</td>
+                <td class=\"rundown-text-font\">
+                    <button type=\"button\" class=\"btn btn-primary rundown-text-font w-100\" onClick=\"edit_data(".$row["id"].")\">Edit</button>
+                    <button type=\"button\" class=\"btn btn-danger rundown-text-font w-100 mt-1\" onClick=\"hapus_data(".$row["id"].")\">Hapus</button>
+                </td>
             </tr>
         ";
     }

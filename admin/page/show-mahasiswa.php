@@ -25,7 +25,7 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
     <title>Studi Lapangan</title>
 </head>
 <body class="bg-dark">
-<nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container p-0 px-2">
       <a class="navbar-brand text-light" href="#">
         <img src="../../res/Logo_UnivLampung.png" alt="" width="40px" class="d-inline-block align-text-center me-2">
