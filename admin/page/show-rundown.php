@@ -44,7 +44,7 @@
                     Lihat
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a href="#" class="dropdown-item">Rundown</a></li>
+                    <li><a href="./show-rundown.php" class="dropdown-item">Rundown</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="./show-mahasiswa.php">Data Mahasiswa</a></li>
                     </ul>

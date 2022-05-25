@@ -16,7 +16,7 @@ if(isset($_GET["submit"])){
         $status = false;
     }
 
-    $dataCount = mysqli_num_rows(mysqli_query("SELECT * FROM `rundown` WHERE `event_date`='$date' AND `event_time`='$time';"));
+    $dataCount = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM `rundown` WHERE `event_date`='$date' AND `event_time`='$time';"));
 
     if($dataCount > 0){
         $status = false;
@@ -33,6 +33,8 @@ if(isset($_GET["submit"])){
     }else{
         echo "<script>window.alert(\"Input Gagal\")</script>";
     }
+
+    // var_dump("LOW");
 
     header("refresh:0;url=../page/rundown.php");
 }

@@ -82,7 +82,7 @@ if(isset($_GET["submit"])){
         }
     }
 
-    if($npm === "" || $nama === "" || $kelas === "Pilih Kelas" || $bus === "Pilih Bus" || $kamar === "Pilih Kamar" || $kelompok === "Pilih Kelompok"){
+    if($npm === "" || $name === "" || $kelas === "Pilih Kelas" || $bus === "Pilih Bus" || $kamar === "Pilih Kamar" || $kelompok === "Pilih Kelompok"){
         $success = false;
     }
 
@@ -103,6 +103,8 @@ if(isset($_GET["submit"])){
     }else{
         echo "<script>window.alert(\"Input Gagal\")</script>";
     }
+
+    // var_dump("LOW");
 
     header("refresh:0;url=../page/mahasiswa.php");
 }
