@@ -11,10 +11,20 @@ if(isset($_GET["submit"])){
     $place = $_GET['event-place'];
     $detail = $_GET['event-detail'];
 
-    $result = mysqli_query($conn, "UPDATE `rundown` SET `event_date`='$date',`event_time`='$time',`event_title`='$title',`event_place`='$place',`event_detail`='$detail' WHERE `id`='$id';");
+    $status = true;
 
-    if($result){
-        echo "<script>window.alert(\"Update Sukses\")</script>";
+    if($date === "" || $time === "" || $title === "" || $place === "" || $detail === ""){
+        $status = false;
+    }
+
+    if($status){
+        $result = mysqli_query($conn, "UPDATE `rundown` SET `event_date`='$date',`event_time`='$time',`event_title`='$title',`event_place`='$place',`event_detail`='$detail' WHERE `id`='$id';");
+
+        if($result){
+            echo "<script>window.alert(\"Update Sukses\")</script>";
+        }else{
+            echo "<script>window.alert(\"Update Gagal\")</script>";
+        }
     }else{
         echo "<script>window.alert(\"Update Gagal\")</script>";
     }
