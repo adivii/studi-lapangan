@@ -2,8 +2,8 @@
 
 include './connection.php';
 
-$key = $_GET["key"];
 $result = "";
+$key = $_GET["key"];
 
 mysqli_select_db($conn, "studi-lapangan");
 
@@ -15,7 +15,7 @@ if (mysqli_num_rows($queryResult) > 0){
     while($row = mysqli_fetch_assoc($queryResult)){
         if($row["id_bus"] === $key){
             $result = $result."
-                <option value=\"".$row["id_bus"]."\" selected>".$row["nama_bus"]."</option>
+                <option value=\"".$row["id_bus"]."\" selected>Bus ".$row["nama_bus"]."</option>
             ";
         }else{
             $result = $result."

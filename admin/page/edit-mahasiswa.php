@@ -11,12 +11,7 @@ $key = $_GET["key"];
 include "../script/connection.php";
 mysqli_select_db($conn, "studi-lapangan");
 
-$query = "SELECT 
-            `mahasiswa`.`npm_mhs`, `mahasiswa`.`nama_mhs`, `kelas`.`nama_kelas`, `bus`.`nama_bus`, `mahasiswa`.`no_seat`, `kamar`.`nomor_kamar`, `kelompok`.`nama_kelompok`
-          FROM
-            `mahasiswa`, `kelompok`, `kelas`, `kamar`, `bus`
-          WHERE
-            `mahasiswa`.`npm_mhs`=$key AND `mahasiswa`.`kelas_mhs`=`kelas`.`id_kelas` AND `mahasiswa`.`id_bus`=`bus`.`id_bus` AND `mahasiswa`.`id_kamar`=`kamar`.`id_kamar` AND `mahasiswa`.`id_kelompok`=`kelompok`.`id_kelompok`;";
+$query = "SELECT * FROM `mahasiswa` WHERE `mahasiswa`.`npm_mhs`=$key;";
 
 $queryResult = mysqli_query($conn, $query);
 
@@ -41,7 +36,7 @@ $result = mysqli_fetch_assoc($queryResult);
     <title>Studi Lapangan</title>
 </head>
 <body class="bg-dark">
-  <nav class="navbar navbar-expand-lg navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container p-0 px-2">
       <a class="navbar-brand text-light" href="#">
         <img src="../../res/Logo_UnivLampung.png" alt="" width="40px" class="d-inline-block align-text-center me-2">
@@ -65,6 +60,16 @@ $result = mysqli_fetch_assoc($queryResult);
               <li><a class="dropdown-item" href="./mahasiswa.php">Data Mahasiswa</a></li>
             </ul>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Lihat
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a href="#" class="dropdown-item">Rundown</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="./show-mahasiswa.php">Data Mahasiswa</a></li>
+            </ul>
+          </li>
           <li class="nav-item">
             <a href="../script/end-session.php" class="nav-link text-light">Logout</a>
           </li>
@@ -74,7 +79,7 @@ $result = mysqli_fetch_assoc($queryResult);
   </nav>
 
   <div class="container w-75 mx-auto mt-2">
-    <form action="../script/input-mahasiswa.php" method="get">
+    <form action="../script/update-mahasiswa.php" method="get">
       <div class="mb-3">
         <label for="mhs-npm" class="form-label text-light">NPM Mahasiswa</label>
         <input type="text" class="form-control" id="mhs-npm" name="mhs-npm" value="<?php echo $key ?>" readonly>
@@ -92,7 +97,7 @@ $result = mysqli_fetch_assoc($queryResult);
         <label for="bus-id" class="form-label text-light">Bus</label>
         <select name="bus-id" id="bus-id" class="form-select" onchange="bus_changed()"></select>
         <input class="form-control mt-2" type="number" name="bus-other" id="bus-other" placeholder="Bus" style="display: none">
-        <input class="form-control mt-2" type="number" name="seat-number" id="seat-number" placeholder="Nomor Seat">
+        <input class="form-control mt-2" type="number" name="seat-number" id="seat-number" placeholder="Nomor Seat" value="<?php echo $result["no_seat"] ?>">
       </div>
       <div class="mb-3">
         <label for="kamar-id" class="form-label text-light">Kamar</label>
@@ -110,6 +115,9 @@ $result = mysqli_fetch_assoc($queryResult);
 
   <script>
     load_bus(<?php echo $result["id_bus"] ?>);
+    load_kelas(<?php echo $result["kelas_mhs"] ?>);
+    load_kamar(<?php echo $result["id_kamar"] ?>);
+    load_kelompok(<?php echo $result["id_kelompok"] ?>);
   </script>
 </body>
 </html>

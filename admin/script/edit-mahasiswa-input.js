@@ -1,4 +1,4 @@
-function load_kelas(){
+function load_kelas(key){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){
@@ -6,7 +6,7 @@ function load_kelas(){
         };
     };
 
-    xmlhttp.open("GET", "../script/get-kelas-edit.php", true);
+    xmlhttp.open("GET", "../script/get-kelas-edit.php?key=" + key, true);
     xmlhttp.send();
 }
 
@@ -22,7 +22,7 @@ function load_bus(key){
     xmlhttp.send();
 }
 
-function load_kamar(){
+function load_kamar(key){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){
@@ -30,11 +30,11 @@ function load_kamar(){
         };
     };
 
-    xmlhttp.open("GET", "../script/get-kamar-edit.php", true);
+    xmlhttp.open("GET", "../script/get-kamar-edit.php?key=" + key, true);
     xmlhttp.send();
 }
 
-function load_kelompok(){
+function load_kelompok(key){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){
@@ -42,7 +42,7 @@ function load_kelompok(){
         };
     };
 
-    xmlhttp.open("GET", "../script/get-kelompok-edit.php", true);
+    xmlhttp.open("GET", "../script/get-kelompok-edit.php?key=" + key, true);
     xmlhttp.send();
 }
 
@@ -93,7 +93,3 @@ function kelompok_changed(){
 
     document.getElementById("placeholder-kelompok").style.display = "none";
 }
-
-load_kelas();
-load_kamar();
-load_kelompok();

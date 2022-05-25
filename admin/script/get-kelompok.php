@@ -13,7 +13,7 @@ $queryResult = mysqli_query($conn, $query);
 if (mysqli_num_rows($queryResult) > 0){
     while($row = mysqli_fetch_assoc($queryResult)){
         $result = $result."
-            <option value=\"".$row["id_kelompok"]."\">".$row["nama_kelompok"]."</option>
+            <option value=\"".$row["id_kelompok"]."\">Kelompok ".$row["nama_kelompok"]."</option>
         ";
     }
 }

@@ -15,7 +15,13 @@ function edit_data(npm){
 }
 
 function hapus_data(npm){
+    var isDelete = confirm("Delete Data?");
 
+    if(isDelete){
+        location.href="../script/delete-mahasiswa.php?key=" + npm;
+    }else{
+        location.href="./show-mahasiswa.php";
+    }
 }
 
 load_data("all");

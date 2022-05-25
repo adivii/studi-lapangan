@@ -44,7 +44,7 @@ if (mysqli_num_rows($queryResult) > 0){
                 <td class=\"card-text-font\">Kelompok ".$row["nama_kelompok"]."</td>
                 <td class=\"card-text-font\">
                     <button type=\"button\" class=\"btn btn-primary card-text-font w-100\" onClick=\"edit_data('".$row["npm_mhs"]."')\">Edit</button>
-                    <button type=\"button\" class=\"btn btn-danger card-text-font w-100 mt-1\" onClick=hapus_data(\"".$row["npm_mhs"]."\")>Hapus</button>
+                    <button type=\"button\" class=\"btn btn-danger card-text-font w-100 mt-1\" onClick=\"hapus_data(".$row["npm_mhs"].")\">Hapus</button>
                 </td>
             </tr>
         ";

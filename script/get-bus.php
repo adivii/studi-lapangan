@@ -18,7 +18,7 @@ if($key === ""){
 }else{
     $query = "SELECT `mahasiswa`.`npm_mhs`, `mahasiswa`.`nama_mhs`, `bus`.`nama_bus`
                 FROM `mahasiswa`, `bus`
-                WHERE ((`mahasiswa`.`npm_mhs` LIKE '%$key%') OR (`mahasiswa`.`nama_mhs` LIKE '%$key%') OR (`bus`.`nama_bus` LIKE '%$key%')) AND `mahasiswa`.`id_bus`=`bus`.`id_bus`
+                WHERE ((`mahasiswa`.`npm_mhs` LIKE '%$key%') OR (`mahasiswa`.`nama_mhs` LIKE '%$key%') OR (CONCAT('Bus ', `bus`.`nama_bus`) LIKE '%$key%')) AND `mahasiswa`.`id_bus`=`bus`.`id_bus`
                 ORDER BY `mahasiswa`.`npm_mhs`;";
 }
 
@@ -30,7 +30,7 @@ if (mysqli_num_rows($queryResult) > 0){
             <tr>
                 <td class=\"card-text-font\">".$row["npm_mhs"]."</td>
                 <td class=\"card-text-font\">".$row["nama_mhs"]."</td>
-                <td class=\"card-text-font\">".$row["nama_bus"]."</td>
+                <td class=\"card-text-font\">Bus ".$row["nama_bus"]."</td>
             </tr>
         ";
     }
