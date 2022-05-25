@@ -1,39 +1,20 @@
-// Import function
-async function loadJSON(__loc) {
-    const response = await fetch(__loc);
-    json = await response.json();
-
-    return json;
-}
-
-// Function to change table values
-async function change(id){
-    // Load json file and load it into rundown data
-    var rawData = await loadJSON("../json/rundown.json");
-    var rundownData = eval(rawData);
-
-    // Print into html file
-    var result = "";
-
-    rundownData.forEach(i => {
-        if(i.id == id){
-            result = result + "<tr>\
-            <td class=\"card-text-font\">" + i.tanggal + "</td>\
-            <td class=\"card-text-font\">" + i.waktu + "</td>\
-            <td class=\"card-text-font\">" + i.kegiatan + "</td>\
-            <td class=\"card-text-font\">" + i.keterangan + "</td>\
-            </tr>";
+function change(id){
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200){
+            document.getElementById("rundown-data").innerHTML = this.responseText;
         };
-    });
+    };
 
-    document.getElementById("rundown-data").innerHTML = result;
+    xmlhttp.open("GET", "../script/get-rundown.php?id=" + id, true);
+    xmlhttp.send();
 }
 
-async function updateRundown(){
-    document.getElementById("default-hari").hidden = true;
-
+function updateRundown(){
     var select = document.getElementById("hari");
     var hari = select.options[select.selectedIndex];
 
     change(hari.value)
 }
+
+change("all");

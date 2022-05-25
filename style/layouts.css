@@ -26,6 +26,10 @@
         font-size: 0.7rem !important;
     }
 
+    .rundown-text-font{
+        font-size: 0.5rem !important;
+    }
+
     .btn-font{
         font-size: 0.7rem !important;
     }
@@ -64,6 +68,10 @@
     .card-text-font{
         font-size: 0.75rem !important;
     }
+
+    .rundown-text-font{
+        font-size: 0.6rem !important;
+    }
     
     .btn-font{
         font-size: 0.75rem !important;
@@ -82,6 +90,10 @@
 
     .card-text-font{
         font-size: 0.6rem !important;
+    }
+
+    .rundown-text-font{
+        font-size: 0.4rem !important;
     }
 
     .btn-font{
