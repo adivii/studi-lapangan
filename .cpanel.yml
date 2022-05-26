@@ -3,4 +3,8 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/u0715251/public_html/
     - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp style.css $DEPLOYPATH
+    - /bin/cp -R admin
+    - /bin/cp -R page
+    - /bin/cp -R res
+    - /bin/cp -R script
+    - /bin/cp -R style
