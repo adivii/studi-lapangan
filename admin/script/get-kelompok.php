@@ -1,6 +1,6 @@
 <?php
 
-include './connection.php';
+include '../../script/connection.php';
 
 $result = "<option id=\"placeholder-kelompok\" selected>Pilih Kelompok</option>";
 

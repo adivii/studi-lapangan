@@ -1,6 +1,6 @@
 <?php
 
-include './connection.php';
+include '../../script/connection.php';
 
 $key = $_GET["key"];
 $result = "";

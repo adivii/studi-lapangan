@@ -84,7 +84,6 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
           <div class="card-body">
             <h1 class="card-title h1 card-title-font" style="font-size: 1.8rem;">ADMIN STUDI LAPANGAN</h1>
             <p class="card-text card-text-font" style="font-size: 1rem;">Halaman ini digunakan sebagai akses panitia dalam mengelola informasi seputar Studi Lapangan.</p>
-            <a href="#" class="btn btn-primary btn-font">Learn More</a>
           </div>
         </div>
       </div>

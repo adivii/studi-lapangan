@@ -1,10 +1,10 @@
 <?php
 
-include './connection.php';
+include '../../script/connection.php';
 
 $result = "<option id=\"placeholder-bus\" selected>Pilih Bus</option>";
 
-$query = "SELECT * FROM bus ORDER BY nama_bus;";
+$query = "SELECT * FROM `bus` ORDER BY nama_bus;";
 
 $queryResult = mysqli_query($conn, $query);
 

@@ -1,6 +1,6 @@
 <?php
 
-include './connection.php';
+include '../../script/connection.php';
 
 $result = "<option id=\"default-hari\" value=\"all\" selected>Semua Jadwal</option>";
 

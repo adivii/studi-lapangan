@@ -1,6 +1,6 @@
 <?php
 
-include './connection.php';
+include '../../script/connection.php';
 
 if(isset($_POST["submit"])){
     $user = $_POST["username"];

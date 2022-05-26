@@ -8,7 +8,7 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
 
 $key = $_GET["key"];
 
-include "../script/connection.php";
+include "../../script/connection.php";
 
 $query = "SELECT * FROM `rundown` WHERE `rundown`.`id`=$key;";
 
