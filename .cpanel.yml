@@ -3,8 +3,8 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/u0715251/public_html/web_testing
     - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp -R admin
-    - /bin/cp -R page
-    - /bin/cp -R res
-    - /bin/cp -R script
-    - /bin/cp -R style
+    - /bin/cp -R admin $DEPLOYPATH
+    - /bin/cp -R page $DEPLOYPATH
+    - /bin/cp -R res $DEPLOYPATH
+    - /bin/cp -R script $DEPLOYPATH
+    - /bin/cp -R style $DEPLOYPATH
