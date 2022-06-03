@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 25, 2022 at 09:54 AM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.1.33
+-- Host: 127.0.0.1
+-- Generation Time: Jun 03, 2022 at 02:37 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -58,6 +57,25 @@ CREATE TABLE `bus` (
 INSERT INTO `bus` (`id_bus`, `nama_bus`) VALUES
 (1, 1),
 (2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `checklist`
+--
+
+CREATE TABLE `checklist` (
+  `id_barang` int(11) NOT NULL,
+  `nama_barang` varchar(255) NOT NULL,
+  `keterangan_barang` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `checklist`
+--
+
+INSERT INTO `checklist` (`id_barang`, `nama_barang`, `keterangan_barang`) VALUES
+(3, 'Almamater', 'Opsional');
 
 -- --------------------------------------------------------
 
@@ -183,6 +201,12 @@ ALTER TABLE `bus`
   ADD PRIMARY KEY (`id_bus`);
 
 --
+-- Indexes for table `checklist`
+--
+ALTER TABLE `checklist`
+  ADD PRIMARY KEY (`id_barang`);
+
+--
 -- Indexes for table `kamar`
 --
 ALTER TABLE `kamar`
@@ -225,6 +249,12 @@ ALTER TABLE `rundown`
 --
 ALTER TABLE `bus`
   MODIFY `id_bus` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `checklist`
+--
+ALTER TABLE `checklist`
+  MODIFY `id_barang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kamar`
