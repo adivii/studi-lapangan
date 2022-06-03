@@ -58,6 +58,8 @@ $result = mysqli_fetch_assoc($queryResult);
               <li><a href="./rundown.php" class="dropdown-item">Rundown</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="./mahasiswa.php">Data Mahasiswa</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="./checklist.php">Checklist</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -68,6 +70,8 @@ $result = mysqli_fetch_assoc($queryResult);
               <li><a href="./show-rundown.php" class="dropdown-item">Rundown</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="./show-mahasiswa.php">Data Mahasiswa</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="./show-checklist.php">Checklist</a></li>
             </ul>
           </li>
           <li class="nav-item">

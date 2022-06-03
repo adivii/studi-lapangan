@@ -1,10 +1,27 @@
 <?php
 
+include '../../script/connection.php';
+
+$key = $_GET["key"];
 session_start();
 
 if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
     header("location: ../index.html");
 }
+
+$result = "";
+$key = $_GET["key"];
+
+$query = "SELECT * FROM checklist WHERE `id_barang`='$key';";
+
+
+$queryResult = mysqli_query($conn, $query);
+
+if (mysqli_num_rows($queryResult) > 0){
+    $data = mysqli_fetch_assoc($queryResult);   
+}
+
+echo $result;
 
 ?>
 
@@ -24,7 +41,7 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
     <title>Studi Lapangan</title>
 </head>
 <body class="bg-dark">
-<nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container p-0 px-2">
       <a class="navbar-brand text-light" href="#">
         <img src="../../res/Logo_UnivLampung.png" alt="" width="40px" class="d-inline-block align-text-center me-2">
@@ -70,28 +87,25 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
     </div>
   </nav>
 
-  <div class="container" style="margin-top: 120px;">
-    <div class="container row position-relative sm-show" style="height: 80px; display: none;">
-      <!-- <img class="img h-auto position-absolute top-50 start-50 translate-middle" src="res/Logo_UnivLampung.png" alt="" style="width: 90px;"> -->
-      <div class="container-fluid p-0 position-absolute top-50 start-50 translate-middle" style="width: 150px; height: 80px; border-radius: 35px 10px; overflow: hidden; box-shadow: 2px 2px 5px var(--white-color);">
-        <img class="img w-100" src="res/pexels-olia-danilevich-4974912.jpg" alt="">
+  <div class="container w-75 mx-auto mt-2">
+    <form action="../script/update-checklist.php" method="get">
+      <div class="mb-3">
+        <label for="id-barang" class="form-label text-light">ID Barang</label>
+        <input type="text" class="form-control" id="id-barang" name="id-barang" value="<?=$data['id_barang']?>" readonly>
       </div>
-    </div>
-    <div class="container row">
-      <div class="col-sm-4 col position-relative">
-        <div class="container card-image-container-home p-0 position-absolute top-50 start-50 translate-middle sm-hidden" style="border-radius: 60px 20px; overflow: hidden;">
-          <img class="img w-100" src="../../res/pexels-olia-danilevich-4974912.jpg" alt="">
-        </div>
+      <div class="mb-3">
+        <label for="nama-barang" class="form-label text-light">Nama Barang</label>
+        <input type="text" class="form-control" id="nama-barang" name="nama-barang" value="<?=$data['nama_barang']?>">
       </div>
-      <div class="col-md-8 col-12 card-container-home">
-        <div class="card border-0 sm-text-center text-start text-light bg-transparent">
-          <div class="card-body">
-            <h1 class="card-title h1 card-title-font" style="font-size: 1.8rem;">ADMIN STUDI LAPANGAN</h1>
-            <p class="card-text card-text-font" style="font-size: 1rem;">Halaman ini digunakan sebagai akses panitia dalam mengelola informasi seputar Studi Lapangan.</p>
-          </div>
-        </div>
+      <div class="mb-3">
+        <label for="keterangan" class="form-label text-light">Keterangan</label>
+        <select name="keterangan" id="keterangan" class="form-select">
+          <option value="Wajib" <?php if($data['keterangan_barang'] == "Wajib"){echo "selected";}?>>Wajib</option>
+          <option value="Opsional" <?php if($data['keterangan_barang'] == "Opsional"){echo "selected";}?>>Opsional</option>
+        </select>
       </div>
-    </div>
+      <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
+    </form>
   </div>
 </body>
 </html>

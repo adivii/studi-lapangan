@@ -25,47 +25,51 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
     <title>Studi Lapangan</title>
 </head>
 <body class="bg-dark">
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container p-0 px-2">
-            <a class="navbar-brand text-light" href="#">
-                <img src="../../res/Logo_UnivLampung.png" alt="" width="40px" class="d-inline-block align-text-center me-2">
-                <!-- Studi Lapangan -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container p-0 px-2">
+      <a class="navbar-brand text-light" href="#">
+        <img src="../../res/Logo_UnivLampung.png" alt="" width="40px" class="d-inline-block align-text-center me-2">
+        <!-- Studi Lapangan -->
+      </a>
+      <button class="navbar-toggler me-1 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto me-1 mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-light active" aria-current="page" href="./home.php">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Input
             </a>
-            <button class="navbar-toggler me-1 ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto me-1 mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link text-light active" aria-current="page" href="./home.php">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Input
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a href="./rundown.php" class="dropdown-item">Rundown</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="./mahasiswa.php">Data Mahasiswa</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Lihat
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a href="./show-rundown.php" class="dropdown-item">Rundown</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="./show-mahasiswa.php">Data Mahasiswa</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="../script/end-session.php" class="nav-link text-light">Logout</a>
-                </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a href="./rundown.php" class="dropdown-item">Rundown</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="./mahasiswa.php">Data Mahasiswa</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="./checklist.php">Checklist</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Lihat
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a href="./show-rundown.php" class="dropdown-item">Rundown</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="./show-mahasiswa.php">Data Mahasiswa</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="./show-checklist.php">Checklist</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="../script/end-session.php" class="nav-link text-light">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
     <div class="container mx-auto mt-4 px-0 w-75">
         <select id="hari" class="form-select card-text-font py-0 px-2" style="padding-top: 2px !important; padding-bottom: 2px !important;" aria-label="Default select example" onchange="updateRundown()">
             

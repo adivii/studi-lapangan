@@ -14,17 +14,18 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../res/Logo_UnivLampung.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../res/Logo_UnivLampung.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../style/color.css">
-    <link rel="stylesheet" href="../../style/font.css">
-    <link rel="stylesheet" href="../../style/effect.css">
-    <link rel="stylesheet" href="../../style/layouts.css">
+    <link rel="stylesheet" href="../style/color.css">
+    <link rel="stylesheet" href="../style/font.css">
+    <link rel="stylesheet" href="../style/effect.css">
+    <link rel="stylesheet" href="../style/layouts.css">
+    <script src="../script/checklist.js"></script>
     <title>Studi Lapangan</title>
 </head>
 <body class="bg-dark">
-<nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container p-0 px-2">
       <a class="navbar-brand text-light" href="#">
         <img src="../../res/Logo_UnivLampung.png" alt="" width="40px" class="d-inline-block align-text-center me-2">
@@ -69,29 +70,21 @@ if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
       </div>
     </div>
   </nav>
-
-  <div class="container" style="margin-top: 120px;">
-    <div class="container row position-relative sm-show" style="height: 80px; display: none;">
-      <!-- <img class="img h-auto position-absolute top-50 start-50 translate-middle" src="res/Logo_UnivLampung.png" alt="" style="width: 90px;"> -->
-      <div class="container-fluid p-0 position-absolute top-50 start-50 translate-middle" style="width: 150px; height: 80px; border-radius: 35px 10px; overflow: hidden; box-shadow: 2px 2px 5px var(--white-color);">
-        <img class="img w-100" src="res/pexels-olia-danilevich-4974912.jpg" alt="">
-      </div>
-    </div>
-    <div class="container row">
-      <div class="col-sm-4 col position-relative">
-        <div class="container card-image-container-home p-0 position-absolute top-50 start-50 translate-middle sm-hidden" style="border-radius: 60px 20px; overflow: hidden;">
-          <img class="img w-100" src="../../res/pexels-olia-danilevich-4974912.jpg" alt="">
-        </div>
-      </div>
-      <div class="col-md-8 col-12 card-container-home">
-        <div class="card border-0 sm-text-center text-start text-light bg-transparent">
-          <div class="card-body">
-            <h1 class="card-title h1 card-title-font" style="font-size: 1.8rem;">ADMIN STUDI LAPANGAN</h1>
-            <p class="card-text card-text-font" style="font-size: 1rem;">Halaman ini digunakan sebagai akses panitia dalam mengelola informasi seputar Studi Lapangan.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+  
+  <div class="container mt-4">
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr>
+                <th scope="col" class="card-text-font text-center" width="75px">Check</th>
+                <th scope="col" class="card-text-font">Barang</th>
+                <th scope="col" class="card-text-font">Keterangan</th>
+                <th scope="col" class="card-text-font">Operasi</th>
+            </tr>
+        </thead>
+        <tbody id="checklist-data">
+            
+        </tbody>
+    </table>
   </div>
 </body>
 </html>

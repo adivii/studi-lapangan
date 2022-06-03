@@ -35,7 +35,7 @@ $result = mysqli_fetch_assoc($queryResult);
     <title>Studi Lapangan</title>
 </head>
 <body class="bg-dark">
-<nav class="navbar navbar-expand-lg navbar-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container p-0 px-2">
       <a class="navbar-brand text-light" href="#">
         <img src="../../res/Logo_UnivLampung.png" alt="" width="40px" class="d-inline-block align-text-center me-2">
@@ -57,6 +57,8 @@ $result = mysqli_fetch_assoc($queryResult);
               <li><a href="./rundown.php" class="dropdown-item">Rundown</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="./mahasiswa.php">Data Mahasiswa</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="./checklist.php">Checklist</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
@@ -67,6 +69,8 @@ $result = mysqli_fetch_assoc($queryResult);
               <li><a href="./show-rundown.php" class="dropdown-item">Rundown</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="./show-mahasiswa.php">Data Mahasiswa</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="./show-checklist.php">Checklist</a></li>
             </ul>
           </li>
           <li class="nav-item">
