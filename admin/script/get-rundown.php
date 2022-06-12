@@ -6,9 +6,9 @@ $id = $_GET["id"];
 $result = "";
 
 if($id === "all"){
-    $query = "SELECT * FROM rundown ORDER BY `event_date`, `event_time`;";
+    $query = "SELECT DISTINCT * FROM rundown ORDER BY `event_date`, `event_time` ;";
 }else{
-    $query = "SELECT * FROM rundown WHERE `event_date`='$id' ORDER BY `event_date`, `event_time`;";
+    $query = "SELECT DISTINCT * FROM rundown WHERE `event_date`='$id' ORDER BY `event_date`, `event_time`;";
 }
 
 $queryResult = mysqli_query($conn, $query);

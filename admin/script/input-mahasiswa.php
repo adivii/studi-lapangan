@@ -68,7 +68,7 @@ if(isset($_GET["submit"])){
     if($kelompok === "other"){
         $kelompok_other = $_GET["kelompok-other"];
 
-        if($bus_other == ""){
+        if($kelompok_other == ""){
             $success = false;
         }else{
             $result = mysqli_query($conn, "INSERT INTO `kelompok` (`id_kelompok`, `nama_kelompok`) VALUES (NULL, '$kelompok_other');");
@@ -105,7 +105,7 @@ if(isset($_GET["submit"])){
 
     // var_dump("LOW");
 
-    header("refresh:0;url=../page/mahasiswa.php");
+    // header("refresh:0;url=../page/mahasiswa.php");
 }
 
 ?>

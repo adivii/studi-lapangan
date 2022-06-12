@@ -4,7 +4,7 @@ include './connection.php';
 
 $result = "<option id=\"default-hari\" value=\"all\" selected>Semua Jadwal</option>";
 
-$query = "SELECT `event_date` FROM rundown;";
+$query = "SELECT DISTINCT `event_date` FROM rundown;";
 
 $queryResult = mysqli_query($conn, $query);
 
