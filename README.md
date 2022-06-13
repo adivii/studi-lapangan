@@ -11,3 +11,4 @@ Pembagian tugasnya meliputi pengembangan awal terhadap website yang dikembangkan
 Perbaikan terhadap bug yang tersisa pada tampilan rundown, serta penyempurnaan CRUD pada halaman admin
 ## Link Hosting
 - https://trip.ilkomapp.com/ (Halaman Web Guide Book Asli)
+- http://studlap.nyelow.my.id/ (Hosting Pribadi)
